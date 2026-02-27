@@ -1,4 +1,4 @@
-package NivelIntermediario.Desafio05;
+package Desafios.Desafio05;
 
 public interface Conta {
     void consultarSaldo();

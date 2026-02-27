@@ -1,27 +1,32 @@
-package NivelIntermediario.Desafio05;
+package Desafios.Desafio05;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContaPoupanca extends ContaBancaria{
-    List<Double> saldoPoupanca = new ArrayList<>();
+    List<Double> historicoDepositos = new ArrayList<>();
 
+    @Override
     public void depositar(double valor){
         if (valor <= 0){
-            System.out.println("Valor inválido, insira um valor maior ou igual a zero.");
+            System.out.println("Valor inválido! Insira um valor maior ou igual a zero.");
         }else {
-            saldoPoupanca.add(valor);
+            double taxa = valor * 0.01;
+            double valorLiquido = valor - taxa;
+
+            saldo += valorLiquido;
+            historicoDepositos.add(valor);
+
             System.out.println("Depósito de $" + valor + " realizado com sucesso");
+            System.out.println("Taxa de 1%: R$ " + taxa);
+            System.out.println("Valor creditado: R$ " + valorLiquido);
         }
     }
 
+    @Override
     public void consultarSaldo(){
-        double soma = 0;
-        double somaDesconto = 0;
-        for (Double n : saldoPoupanca){
-            soma += n;
-        }
-        somaDesconto = soma - (soma * 0.01);
-        System.out.println("Seu saldo é: " + somaDesconto);
+        System.out.println("Seu saldo é: " + saldo);
+
+        System.out.println("Histórico de depósitos (valores brutos): " + historicoDepositos);
     }
 }

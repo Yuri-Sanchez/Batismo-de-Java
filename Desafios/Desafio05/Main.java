@@ -1,33 +1,34 @@
-package NivelIntermediario.Desafio05;
+package Desafios.Desafio05;
 
 import java.util.Scanner;
 
 public class Main {
     static void main(String[] args) {
-        int op = 0;
+        int opPrincipal = 0;
+        int opConta = 0;
+        int opDeposito = 0;
         int valor = 0;
         Scanner sc = new Scanner(System.in);
 
         ContaCorrente narutoCorrente = new ContaCorrente();
         ContaPoupanca narutoPoupanca = new ContaPoupanca();
 
-        while(op != 3) {
+        while(opPrincipal != 3) {
             System.out.println("\n---------- Banco Konoha ---------");
             System.out.println("1 - Saldo");
             System.out.println("2 - Depósito");
             System.out.println("3 - Sair");
             System.out.print("Opção: ");
-            op = sc.nextInt();
+            opPrincipal = sc.nextInt();
 
-            switch (op) {
+            switch (opPrincipal) {
                 case 1:
                     System.out.println("\nEscolha a conta:");
                     System.out.println("1 - Conta Corrente");
                     System.out.println("2 - Conta Poupança");
                     System.out.print("Opção: ");
-                    op = sc.nextInt();
-                    sc.nextLine();
-                    switch (op) {
+                    opConta = sc.nextInt();
+                    switch (opConta) {
                         case 1:
                             narutoCorrente.consultarSaldo();
                             break;
@@ -43,9 +44,9 @@ public class Main {
                     System.out.println("1 - Conta Corrente");
                     System.out.println("2 - Conta Poupança");
                     System.out.print("Opção: ");
-                    op = sc.nextInt();
+                    opDeposito = sc.nextInt();
 
-                    switch (op) {
+                    switch (opDeposito) {
                         case 1:
                             System.out.print("Valor a depositar: ");
                             valor = sc.nextInt();
@@ -57,6 +58,9 @@ public class Main {
                             valor = sc.nextInt();
                             narutoPoupanca.depositar(valor);
                             break;
+
+                        default:
+                            System.out.println("Opção de conta inválida");
                     }
                     break;
 

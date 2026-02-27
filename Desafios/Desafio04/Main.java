@@ -1,4 +1,4 @@
-package NivelIntermediario.Desafio04;
+package Desafios.Desafio04;
 
 public class Main {
     static void main(String[] args) {

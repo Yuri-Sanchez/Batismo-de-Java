@@ -1,15 +1,14 @@
-package NivelIntermediario.Desafio05;
+package Desafios.Desafio05;
 
 public abstract class ContaBancaria implements Conta{
     double saldo;
-    double valor;
 
     public ContaBancaria() {
+        this.saldo = 0.0;
     }
 
-    public ContaBancaria(double saldo, double valor) {
-        this.saldo = saldo;
-        this.valor = valor;
+    public ContaBancaria(double saldoInicial) {
+        this.saldo = saldoInicial;
     }
 
     @Override

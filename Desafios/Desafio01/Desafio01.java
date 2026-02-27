@@ -1,4 +1,4 @@
-package Condicoes;
+package Desafios.Desafio01;
 
 public class Desafio01 {
     static void main() {
